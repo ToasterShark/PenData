@@ -3,7 +3,7 @@ import numpy
 import array
 import time
 import csv
-
+#yo listen up here is the story
 '''
     dataReader.py will read 10 of the UJIpenchars-wXX files and will return
       a file of the master (trained average) set of characters
