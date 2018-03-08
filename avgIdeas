@@ -1,0 +1,41 @@
+Vector Math Boys:
+    go from stream of coords to a vector
+    like in krita
+    -pros:
+        very high resolution image, really good comparisons
+    -cons:
+        have no clue how to do this atm
+Lower Resolution:
+    Remove "excess" coordinates in a stroke to match the number of coords of the smaller stroke
+    -pros:
+        easy to write
+        yeet yeet
+    -cons:
+        lose stroke quality
+Simplify Strokes into Lines (Duncan Method):
+    find the angle between coord 1 and coord 2
+    find the angle between coord 2 and coord 3
+    find the difference between coord (1-2) and coord (2-3)
+    if the angle difference is less than a specific value (k), just connect coord (1-3)
+    if the angle difference is greater than k, make a line for (1-2) and (2-3)
+    in the future, if (1-3) is one line, instead of finding the angle between 1 & 2, and 2 & 3 - do 1 & 3, 3 & 4
+    
+    -pros:
+        not too hard to write
+        can get a very simple character which is easy to compare
+        basically say f u to stroke count - just go through based on the lines, not based on the stroke
+    -cons:
+        okay for linear-focused letters, like a z - but not for o
+        the curves are gonna be hard kfjwoefjwofjw
+        
+Simplify Strokes into Lines (James Method):
+    p much the same as the DUncan Method
+    difference is:
+    -----------------------
+    find the angle between 1 & 2
+    find the angle between 1 & 3
+    find the difference between the two angles
+    when the angle is lower than k, just connect them
+    when the angle is greater:
+        lets say that 1-9 and 1-10 is less than k, but 1-10 and 1-11 is not
+        change your starting coord (previously 1) to 10, and begin taking angles 10-11 and 10-?
